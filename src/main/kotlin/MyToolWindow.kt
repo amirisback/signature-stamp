@@ -5,6 +5,8 @@ import com.intellij.openapi.fileEditor.FileEditorManager
 import com.intellij.openapi.project.Project
 import com.intellij.ui.components.JBPanel
 import com.intellij.util.ui.JBUI
+import io.github.amirisback.ext.emptyVerticalSpace
+import io.github.amirisback.ext.getDateTodayExt
 import javax.swing.JOptionPane
 
 
@@ -25,11 +27,11 @@ class MyToolWindow(private val project: Project) {
                 val caretModel = editor.caretModel
                 val offset = caretModel.offset
 
-                val stampText = "// Created by : amirisback - ${getDateTodayExt()}\n"
+                val stampText = "Created by : amirisback - ${getDateTodayExt()}"
 
                 WriteCommandAction.runWriteCommandAction(project) {
-                    document.insertString(offset, stampText)
-                    caretModel.moveToOffset(offset + stampText.length)
+                    document.insertString(offset, Stamp.result(stampText))
+                    caretModel.moveToOffset(offset + Stamp.result(stampText).length)
                 }
             } else {
                 JOptionPane.showMessageDialog(this, "No active editor found! Please open a code file.")

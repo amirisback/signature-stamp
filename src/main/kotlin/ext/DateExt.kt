@@ -1,4 +1,4 @@
-package io.github.amirisback
+package io.github.amirisback.ext
 
 import java.text.SimpleDateFormat
 import java.util.Date
