@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "io.github.amirisback"
-version = "1.0.0-SNAPSHOT"
+version = "1.0.0"
 
 // Set the JVM language level used to build the project.
 kotlin {
