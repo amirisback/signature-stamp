@@ -1,5 +1,4 @@
 # Signature Stamp
-![Build](https://github.com/amirisback/signature-stamp/workflows/Build/badge.svg)
 ![Version](https://img.shields.io/jetbrains/plugin/v/PLUGIN_ID.svg)
 ![Downloads](https://img.shields.io/jetbrains/plugin/d/PLUGIN_ID.svg)
 
