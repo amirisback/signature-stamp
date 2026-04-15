@@ -8,13 +8,27 @@
     <name>Signature Stamp</name>
 
     <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
-    <vendor url="https://www.yourcompany.com">amirisback</vendor>
+    <vendor url="https://amirisback.github.io">Faisal Amir</vendor>
 
     <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
          Guidelines: https://plugins.jetbrains.com/docs/marketplace/best-practices-for-listing.html#plugin-description -->
     <description><![CDATA[
-        Enter short description for your plugin here.<br>
-        <em>most HTML tags may be used</em>
+        <p><b>Signature Stamp</b> is a handy JetBrains IDE plugin that enables developers to insert a signature stamp directly into their code files with just one click.</p>
+        <br/>
+        <b>Key Features:</b>
+        <ul>
+            <li>Instantly insert a signature stamp via the Tool Window.</li>
+            <li>Customizable default username and message format based on your system.</li>
+            <li>Fully custom message support with dynamic tags (<code>$USERNAME</code>, <code>$DATE</code>).</li>
+            <li>Configuration available right under <i>Settings | Tools | Signature Stamp</i>.</li>
+        </ul>
+        <br/>
+        <p>Perfect for maintaining ownership records, quickly adding copyright headers, and dropping custom notes effortlessly into any source code document.</p>
+        <br/>
+        <b>Screenshots:</b><br/>
+        <img src="https://raw.githubusercontent.com/amirisback/signature-stamp/main/src/main/resources/META-INF/ss_1.png" alt="Screenshot 1" width="400"/><br/>
+        <img src="https://raw.githubusercontent.com/amirisback/signature-stamp/main/src/main/resources/META-INF/ss_2.png" alt="Screenshot 2" width="400"/><br/>
+        <img src="https://raw.githubusercontent.com/amirisback/signature-stamp/main/src/main/resources/META-INF/ss_3.png" alt="Screenshot 3" width="400"/>
         ]]></description>
 
     <!-- Product and plugin compatibility requirements.
@@ -27,8 +41,13 @@
          Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
     <extensions defaultExtensionNs="com.intellij">
         <toolWindow id="TitleMyToolWindow" factoryClass="io.github.amirisback.MyToolWindowFactory"
-                    anchor="right"
-                    icon="AllIcons.Toolwindows.ToolWindowPalette"/>
+                    icon="/icons/pluginIcon.svg"/>
+                    
+        <applicationConfigurable parentId="tools" instance="io.github.amirisback.settings.SignatureStampConfigurable"
+                                 id="io.github.amirisback.settings.SignatureStampConfigurable"
+                                 displayName="Signature Stamp"/>
+        
+        <applicationService serviceImplementation="io.github.amirisback.settings.SignatureStampSettingsState"/>
     </extensions>
 
 </idea-plugin>
