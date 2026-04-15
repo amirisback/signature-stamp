@@ -28,6 +28,12 @@
     <extensions defaultExtensionNs="com.intellij">
         <toolWindow id="TitleMyToolWindow" factoryClass="io.github.amirisback.MyToolWindowFactory"
                     icon="AllIcons.Toolwindows.ToolWindowPalette"/>
+                    
+        <applicationConfigurable parentId="tools" instance="io.github.amirisback.settings.SignatureStampConfigurable"
+                                 id="io.github.amirisback.settings.SignatureStampConfigurable"
+                                 displayName="Signature Stamp"/>
+        
+        <applicationService serviceImplementation="io.github.amirisback.settings.SignatureStampSettingsState"/>
     </extensions>
 
 </idea-plugin>

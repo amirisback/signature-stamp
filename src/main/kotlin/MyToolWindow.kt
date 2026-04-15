@@ -27,11 +27,16 @@ class MyToolWindow(private val project: Project) {
                 val caretModel = editor.caretModel
                 val offset = caretModel.offset
 
-                val stampText = "Created by : amirisback - ${getDateTodayExt()}"
+                val state = io.github.amirisback.settings.SignatureStampSettingsState.instance
+                val stampText = if (state.isDefaultStamp) {
+                    Stamp.result("Created by : ${state.customUserName} - ${getDateTodayExt()}")
+                } else {
+                    state.customMessage
+                }
 
                 WriteCommandAction.runWriteCommandAction(project) {
-                    document.insertString(offset, Stamp.result(stampText))
-                    caretModel.moveToOffset(offset + Stamp.result(stampText).length)
+                    document.insertString(offset, stampText)
+                    caretModel.moveToOffset(offset + stampText.length)
                 }
             } else {
                 JOptionPane.showMessageDialog(this, "No active editor found! Please open a code file.")

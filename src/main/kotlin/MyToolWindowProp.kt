@@ -17,7 +17,8 @@ fun propTextDescription(): JBLabel {
             <html>
                 <ul>
                     <li>This plugin allows you to easily add a signature stamp to your code files.</li>
-                    <li>You can customize the stamp with your name, date, and a custom message.</li>
+                    <li>To configure a custom text or change your default username, go to:<br>
+                        <b>File | Settings | Tools | Signature Stamp</b> (or <b>IntelliJ IDEA | Settings...</b> on macOS).</li>
                     <li>To get started, simply click the button below to generate your signature stamp.</li>
                 </ul>
             </html>

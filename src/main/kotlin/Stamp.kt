@@ -5,8 +5,8 @@ object Stamp {
     fun result(text: String): String {
         return """
             /**
-                 * $text
-                 */
+                  * $text
+                  */
         """.trimIndent()
     }
 
