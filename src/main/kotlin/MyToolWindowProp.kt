@@ -33,7 +33,7 @@ fun propButtonAddStamp(action: () -> Unit): JButton {
     val text = "Add Stamp"
 
     return JButton(text).apply {
-        // alignmentX = java.awt.Component.LEFT_ALIGNMENT
+        maximumSize = java.awt.Dimension(Int.MAX_VALUE, preferredSize.height)
         addActionListener {
             action()
         }

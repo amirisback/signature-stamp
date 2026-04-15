@@ -5,8 +5,6 @@ import com.intellij.openapi.fileEditor.FileEditorManager
 import com.intellij.openapi.project.Project
 import com.intellij.ui.components.JBPanel
 import com.intellij.util.ui.JBUI
-import java.text.SimpleDateFormat
-import java.util.*
 import javax.swing.JOptionPane
 
 
@@ -27,10 +25,7 @@ class MyToolWindow(private val project: Project) {
                 val caretModel = editor.caretModel
                 val offset = caretModel.offset
 
-                val dateFormat = SimpleDateFormat("yyyy-MM-dd HH:mm:ss")
-                val dateString = dateFormat.format(Date())
-
-                val stampText = "// Signature Stamp: amirisback - $dateString\n"
+                val stampText = "// Created by : amirisback - ${getDateTodayExt()}\n"
 
                 WriteCommandAction.runWriteCommandAction(project) {
                     document.insertString(offset, stampText)
