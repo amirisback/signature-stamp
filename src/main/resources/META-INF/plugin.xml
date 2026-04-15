@@ -26,8 +26,7 @@
     <!-- Extensions defined by the plugin.
          Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
     <extensions defaultExtensionNs="com.intellij">
-        <toolWindow id="TitleMyToolWindow" factoryClass="io.github.amirisback.MyToolWindowFactory"
-                    anchor="right"
+        <toolWindow id="MyToolWindow" factoryClass="io.github.amirisback.MyToolWindowFactory"
                     icon="AllIcons.Toolwindows.ToolWindowPalette"/>
     </extensions>
 
