@@ -32,6 +32,8 @@ class MyToolWindow(private val project: Project) {
                     Stamp.result("Created by : ${state.customUserName} - ${getDateTodayExt()}")
                 } else {
                     state.customMessage
+                        .replace("\$USERNAME", state.customUserName)
+                        .replace("\$DATE", getDateTodayExt())
                 }
 
                 WriteCommandAction.runWriteCommandAction(project) {

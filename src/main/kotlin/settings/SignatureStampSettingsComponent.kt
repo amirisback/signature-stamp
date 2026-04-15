@@ -17,7 +17,7 @@ class SignatureStampSettingsComponent {
     val customMessageRadio = JBRadioButton("Use Custom Message (Replaces entire stamp)")
     
     val userNameTextField = JBTextField()
-    val customMessageTextArea = JBTextArea(4, 40).apply {
+    val customMessageTextArea = JBTextArea(15, 40).apply {
         lineWrap = true
         wrapStyleWord = true
     }
@@ -30,12 +30,18 @@ class SignatureStampSettingsComponent {
         defaultStampRadio.addActionListener { updateUI() }
         customMessageRadio.addActionListener { updateUI() }
 
+        val hintLabel = JBLabel("<html><small>Available tags: <b>\$USERNAME</b>, <b>\$DATE</b></small></html>")
+        hintLabel.foreground = com.intellij.util.ui.UIUtil.getContextHelpForeground()
+        val textAreaPanel = JPanel(java.awt.BorderLayout())
+        textAreaPanel.add(JBScrollPane(customMessageTextArea), java.awt.BorderLayout.CENTER)
+        textAreaPanel.add(hintLabel, java.awt.BorderLayout.SOUTH)
+
         panel = FormBuilder.createFormBuilder()
             .addComponent(defaultStampRadio, 1)
             .addLabeledComponent(JBLabel("Default Username: "), userNameTextField, 1, false)
             .addSeparator(15)
             .addComponent(customMessageRadio, 1)
-            .addLabeledComponent(JBLabel("Custom Stamp Message: "), JBScrollPane(customMessageTextArea), 1, true)
+            .addLabeledComponent(JBLabel("Custom Stamp Message: "), textAreaPanel, 1, true)
             .addComponentFillVertically(JPanel(), 0)
             .panel
     }
