@@ -17,6 +17,7 @@ class MyToolWindow(private val project: Project) {
         border = JBUI.Borders.empty(16)
 
         add(propTextTitle())
+        add(propTextSubtitle())
         add(emptyVerticalSpace(10))
         add(propTextDescription())
         add(emptyVerticalSpace(20))
