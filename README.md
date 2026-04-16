@@ -22,10 +22,11 @@
 ## Previews & Screenshots
 
 ### The Tool Window & Settings UI
-![Tool Window panel showing Welcome to Signature Stamp](./docs/image/ss_1.png)
 
+#### Settings Configuration Custom Message Focus
 ![Settings Configuration Custom Message Focus](./docs/image/ss_2.png)
 
+#### Usage of Custom Multiline Text with Dynamic Tags
 ![Usage of Custom Multiline Text with Dynamic Tags](./docs/image/ss_3.png)
 
 ---
