@@ -14,6 +14,11 @@
 
 ---
 
+## How to Build & Run Locally
+```yml
+./gradlew buildPlugin
+```
+
 ## Previews & Screenshots
 
 ### The Tool Window & Settings UI
