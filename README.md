@@ -1,6 +1,7 @@
 # Signature Stamp
-![Version](https://img.shields.io/jetbrains/plugin/v/PLUGIN_ID.svg)
-![Downloads](https://img.shields.io/jetbrains/plugin/d/PLUGIN_ID.svg)
+![Version](https://img.shields.io/jetbrains/plugin/v/io.github.amirisback.signature-stamp.svg)
+![Downloads](https://img.shields.io/jetbrains/plugin/d/io.github.amirisback.signature-stamp.svg)
+[![Build Plugin](https://github.com/amirisback/signature-stamp/actions/workflows/build-plugin.yml/badge.svg)](https://github.com/amirisback/signature-stamp/actions/workflows/build-plugin.yml)
 
 **Signature Stamp** is a JetBrains IDE plugin designed to help developers effortlessly insert signature stamps or custom messages right into their code files. With a simple, accessible Tool Window side panel, generating tracking notes or signature watermarks becomes a one-click affair!
 
